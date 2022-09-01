@@ -3,10 +3,10 @@
   height: 600px;
 }
 
-body {
+main {
   width: 100vw;
   height: 100vh;
-
+  background-color: lightsalmon;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,4 +16,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.header-1{
+  height: 100px;
+  background-color: black;
+}
+
+.col{
+  margin-top: 25px;
 }

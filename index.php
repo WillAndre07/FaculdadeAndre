@@ -17,14 +17,11 @@
   <link rel="stylesheet" href="./estilo.css">
 
 </head>
-
-<body>
-
- <?php 
+  <body>
+    <?php 
  
-  echo $sHtml;
+    echo $sHtml;
 
- ?>
-</body>
-
+    ?>
+  </body>
 </html>
