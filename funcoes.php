@@ -2,20 +2,25 @@
 
 $sHtml = '
 <header class="header-1">
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <button type="button" class="btn btn-light">
-          Entrar
-        </button>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-light">
-          Cadastrar-se
-        </button>  
-      </div>
-    </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Soeltech</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+         <a class="nav-link" href="#">Entrar <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cadastro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Faculdade</a>
+        </li>
+      </ul>
   </div>
+  </nav>  
 </header>
 <main>
   <div class="caixa">
