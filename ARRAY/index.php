@@ -2,19 +2,19 @@
   include("conexao.php");
 
   $array = [
-    1 => ["Nome" => "André", "Idade" => 20],
-    2 => ["Nome" => "Alisson", "Idade" => 22],
-    3 => ["Nome" => "Eduardo", "Idade" => 21],
-    4 => ["Nome" => "Marcos", "Idade" => 45],
-    5 => ["Nome" => "Carl", "Idade" => 12],
-    6 => ["Nome" => "Marlon", "Idade" => 17],
-    7 => ["Nome" => "Samira", "Idade" => 45],
-    8 => ["Nome" => "Camila", "Idade" => 34],
-    9 => ["Nome" => "Zé", "Idade" => 19],
-    10 => ["Nome" => "Robert", "Idade" => 19]
+    ["Nome" => "André", "Idade" => 20],
+    ["Nome" => "Alisson", "Idade" => 22],
+    ["Nome" => "Eduardo", "Idade" => 21],
+    ["Nome" => "Marcos", "Idade" => 45],
+    ["Nome" => "Carl", "Idade" => 12],
+    ["Nome" => "Marlon", "Idade" => 17],
+    ["Nome" => "Samira", "Idade" => 45],
+    ["Nome" => "Camila", "Idade" => 34],
+    ["Nome" => "Zé", "Idade" => 19],
+    ["Nome" => "Robert", "Idade" => 19]
   ];
   $quantidade = 5;
-  $pagina = (isset($_GET['pagina'])) ? $_GET['pagina']:1;
+  $pagina = isset($_GET['pagina']) ? $_GET['pagina']:1;
   $pagararquivo = array_chunk($array, $quantidade);
   $linhas = count($array);
   $calc = $linhas / $quantidade;
@@ -23,12 +23,8 @@
 
   $anterior = $pagina - 1;
   $proximo = $pagina + 1;
-
-
-  
+   
 ?>
-
-<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>

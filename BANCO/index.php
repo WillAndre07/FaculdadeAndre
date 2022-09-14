@@ -1,31 +1,20 @@
 <?php
   include("banco.php");
 
-  $array = [
-    1 => ["Nome" => "André", "Idade" => 20],
-    2 => ["Nome" => "Alisson", "Idade" => 22],
-    3 => ["Nome" => "Eduardo", "Idade" => 21],
-    4 => ["Nome" => "Marcos", "Idade" => 45],
-    5 => ["Nome" => "Carl", "Idade" => 12],
-    6 => ["Nome" => "Marlon", "Idade" => 17],
-    7 => ["Nome" => "Samira", "Idade" => 45],
-    8 => ["Nome" => "Camila", "Idade" => 34],
-    9 => ["Nome" => "Zé", "Idade" => 19],
-    10 => ["Nome" => "Robert", "Idade" => 19]
-  ];
-
   $pagina = (isset($_GET['pagina'])) ? $_GET['pagina']:1;
 
-  $busca = "SELECT * FROM pessoa";
+  $busca = "SELECT * FROM filmes";
   $todos = mysqli_query($conn, $busca);
-
+  
   $quantidade = 2;
-  $linhas = count($array);
+  $linhas =  mysqli_num_rows($todos);
 
   $tr = ceil($linhas / $quantidade);
   $inicio = ($quantidade * $pagina)- $quantidade;
 
   $limite = mysqli_query($conn, "$busca LIMIT $inicio, $quantidade");
+
+
 
   $anterior = $pagina - 1;
   $proximo = $pagina + 1;
@@ -46,17 +35,14 @@
   <table class="table">
     <th>Item</th>
     <th>Nome</th>
-    <th>Idade</th>
   <?php
     while($dados = mysqli_fetch_array($limite)){
-      $id = $dados["Codigo"];
-      $nome = $dados["Nome"];
-      $idade = $dados["Idade"];
+      $id = $dados["id"];
+      $nome = $dados["nome"];
   ?>
     <tr>
       <td><?php echo $id?></td>
       <td><?php echo $nome;?></td>
-      <td><?php echo $idade;?></td>
     </tr>
   <?php
   }
