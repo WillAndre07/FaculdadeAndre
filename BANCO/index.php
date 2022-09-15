@@ -33,16 +33,27 @@
   </head>
 <body>
   <table class="table">
-    <th>Item</th>
+    <th>Id</th>
     <th>Nome</th>
+    <th>Resumo</th>
+    <th>Ano</th>
+    <th>Imagem</th>
   <?php
     while($dados = mysqli_fetch_array($limite)){
-      $id = $dados["id"];
+      $id = $dados["codigo"];
       $nome = $dados["nome"];
+      $resumo = $dados["resumo"];
+      $ano = $dados["ano"];
+      $imagem = $dados["imagem"];
+      $complemento = $dados["complementos"];
   ?>
     <tr>
       <td><?php echo $id?></td>
       <td><?php echo $nome;?></td>
+      <td><?php echo $resumo;?></td>
+      <td><?php echo $ano;?></td>
+      <td><?php echo $imagem;?></td>
+      <td><?php echo $complemento;?></td>
     </tr>
   <?php
   }

@@ -19,7 +19,7 @@
   $linhas = count($array);
   $calc = $linhas / $quantidade;
   $result = $pagararquivo[$pagina-1];
-  $inicio = ($quantidade * $pagina)- $quantidade;
+  $inicio = ($quantidade * $pagina)-$quantidade;
 
   $anterior = $pagina - 1;
   $proximo = $pagina + 1;
@@ -38,7 +38,7 @@
     <th>Nome</th>
     <th>Idade</th>
   <?php
-    for($i=1;$i <= $quantidade;$i++){
+    for($i=0;$i <= $quantidade ;$i++){
   ?>
     <tr>
       <td><?php echo $array[$i]["Nome"];?></td>

@@ -35,17 +35,29 @@ $proximo = $pagina + 1;
 
 <body>
   <table class="table">
-    <th>Item</th>
+    <th>Id</th>
     <th>Nome</th>
+    <th>Resumo</th>
+    <th>Ano</th>
+    <th>Imagem</th>
+    <th>Complemento</th>
     <?php
     while ($dados = mysqli_fetch_array($limite)) {
-      $id = $dados["id"];
+      $id = $dados["codigo"];
       $nome = $dados["nome"];
-    ?>
-      <tr>
-        <td><?php echo $id;?></td>
-        <td><?php echo $nome;?></td>
-        <td><?php echo "<a href='deletar.php?id=$id'>Deletar</a>"?></td>
+      $resumo = $dados["resumo"];
+      $ano = $dados["ano"];
+      $imagem = $dados["imagem"];
+      $complemento = $dados["complementos"];
+  ?>
+    <tr>
+      <td><?php echo $id?></td>
+      <td><?php echo $nome;?></td>
+      <td><?php echo $resumo;?></td>
+      <td><?php echo $ano;?></td>
+      <td><?php echo $imagem?></td>
+      <td><?php echo $complemento;?></td>
+      <td><?php echo "<a href='deletar.php?id=$id'>Deletar</a>"?></td>
       </tr>
     <?php
     }
@@ -83,9 +95,15 @@ $proximo = $pagina + 1;
       <label for="exampleFormControlInput1">Cadastro de Filme</label>
       <input type="text" class="form-control" id="exampleFormControlInput1" name="filme" placeholder="Digite o Nome do Filme">
       <br>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name="resumo" placeholder="Digite o Resumo">
+      <br>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name="ano" placeholder="Digite o ano do filme">
+      <br>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name="complemento" placeholder="Digite complemento">
+      <br>
       <input type="submit" value="Enviar">
     </div>
-  </form>   
+  </form>  
 </body>
 
 </html>
