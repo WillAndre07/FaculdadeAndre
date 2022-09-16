@@ -1,52 +1,86 @@
 <?php
-  include("conexao.php");
 
-  $array = [
-    ["Nome" => "André", "Idade" => 20],
-    ["Nome" => "Alisson", "Idade" => 22],
-    ["Nome" => "Eduardo", "Idade" => 21],
-    ["Nome" => "Marcos", "Idade" => 45],
-    ["Nome" => "Carl", "Idade" => 12],
-    ["Nome" => "Marlon", "Idade" => 17],
-    ["Nome" => "Samira", "Idade" => 45],
-    ["Nome" => "Camila", "Idade" => 34],
-    ["Nome" => "Zé", "Idade" => 19],
-    ["Nome" => "Robert", "Idade" => 19]
+  $aNomes = [
+    [
+      "nome"  => "André",
+      "idade" => 20
+    ],
+    [
+      "nome"  => "Alisson",
+      "idade" => 22
+    ],
+    [
+      "nome"  => "Eduardo",
+      "idade" => 21
+    ],
+    [
+      "nome"  => "Marcos",
+      "idade" => 45
+    ],
+    [
+      "nome"  => "Carl",
+      "idade" => 12
+    ],
+    [
+      "nome"  => "Marlon",
+      "idade" => 17
+    ],
+    [
+      "nome"  => "Samira",
+      "idade" => 45
+    ],
+    [
+      "nome"  => "Camila",
+      "idade" => 34
+    ],
+    [
+      "nome"  => "Zé",
+      "idade" => 19
+    ],
+    [
+      "nome"  => "Robert",
+      "idade" => 19
+    ]
   ];
+
   $quantidade = 5;
-  $pagina = isset($_GET['pagina']) ? $_GET['pagina']:1;
-  $pagararquivo = array_chunk($array, $quantidade);
-  $linhas = count($array);
+  $pagina = $_GET['pagina'] ?? 1;
+  $pagararquivo = array_chunk($aNomes, $quantidade);
+  $linhas = count($aNomes);
   $calc = $linhas / $quantidade;
   $result = $pagararquivo[$pagina-1];
-  $inicio = ($quantidade * $pagina)-$quantidade;
+  $inicio = ($quantidade * $pagina)- $quantidade;
 
   $anterior = $pagina - 1;
   $proximo = $pagina + 1;
-   
 ?>
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Array</title>
+    <title>Paginação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
 <body>
   <table class="table">
     <th>Nome</th>
     <th>Idade</th>
-  <?php
-    for($i=0;$i <= $quantidade ;$i++){
-  ?>
-    <tr>
-      <td><?php echo $array[$i]["Nome"];?></td>
-      <td><?php echo $array[$i]["Idade"];?></td>
-    </tr>
-  <?php
-  }
-  ?>
+    <?php
+      if ($pagina) {
+        foreach ($pagararquivo[$pagina-1] as $linha) {
+          printf('
+            <tr>
+              <td>%s</td>
+              <td>%s</td>
+            </tr>
+          '
+          , $linha['nome']
+          , $linha['idade']
+        );
+        }
+      }
+    ?>
   </table>
   <nav  class="text-center">
   <ul class="pagination">
