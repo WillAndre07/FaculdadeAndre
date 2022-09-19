@@ -57,7 +57,8 @@ $proximo = $pagina + 1;
       <td><?php echo $ano;?></td>
       <td><?php echo $imagem?></td>
       <td><?php echo $complemento;?></td>
-      <td><?php echo "<a href='deletar.php?id=$id'>Deletar</a>"?></td>
+      <td><?php echo "<a href='alterar.php?id=$id' class='btn btn-primary'>Editar</a>"?></td>
+      <td><?php echo "<a href='deletar.php?id=$id' class='btn btn-primary'>Deletar</a>"?></td>
       </tr>
     <?php
     }
