@@ -1,4 +1,4 @@
-<a class="btn btn-success" href="?pagina=sacola">
+<a class="btn btn-primary" href="?pagina=sacola">
     Sacola
 
     <?php if (isset($_SESSION['sacola'])) {

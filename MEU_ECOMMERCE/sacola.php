@@ -1,7 +1,7 @@
 <?php
 if (isset($_SESSION['sacola'])) { ?>
 <form method="post">
-    <input class="btn btn-danger" type="submit" name="limpar_sacola" value="Limpar sacola">
+    <input class="btn btn-primary" type="submit" name="limpar_sacola" value="Limpar sacola">
 </form>
 <hr>
 <table class="table table-striped">

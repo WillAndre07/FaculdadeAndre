@@ -10,6 +10,6 @@ while ($categoria = $sql_prepara->fetch()) {
     } else {
         $identacao = '';
     }
-    echo "<br>{$identacao}<a href=\"?pagina=produtos&categoria={$categoria['id']}\" class=\"btn btn-link\">{$categoria['descricao']}</a>";
+    echo "<br>{$identacao}<a style='color: white; text-decoration: none;' href=\"?pagina=produtos&categoria={$categoria['id']}\" class=\"btn btn-link\">{$categoria['descricao']}</a>";
 }
 ?>
