@@ -31,9 +31,11 @@ class Lista {
   }   
   
   public function mostraComando(){
-    echo '<ol id=' . $this->getSeq() . ' name=' . $this->getNome() . '>';
-    echo '<li>' . $this->getValor() . '</li>';
-    echo '</ol>';
+    $array = [
+      1 => $this->getValor(),
+      2 => $this->getValor(),
+      3 => $this->getValor(),
+    ];
   }
 }
 
