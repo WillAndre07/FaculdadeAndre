@@ -8,11 +8,13 @@
     public function criaPagina(){
       $classehtmlini = new html_classe();
       $classehtmlini->tagHtmlini();
-      $classe->metaHtml();
+
       $classe = new meta_classe();
       $classe->metaHtml();
+
       $classeBody = new body_classe();
       $classeBody->bodyHtml();
+      
       $classehtmlfim = new html_classe();
       $classehtmlfim->tagHtmlfim();
     }

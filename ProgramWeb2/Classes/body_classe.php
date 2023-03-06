@@ -1,7 +1,6 @@
 <?php
 
-class body_classe {
-
+class body_classe{
     public function bodyHtml(){
         echo '<body>';
         echo  '<div>';
@@ -11,5 +10,6 @@ class body_classe {
     }
     
 }
+
 
 ?>
