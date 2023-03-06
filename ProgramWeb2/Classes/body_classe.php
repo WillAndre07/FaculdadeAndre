@@ -5,11 +5,12 @@ class body_classe{
     public function bodyHtml(){
         echo '<body>';
         echo  '<div>';
-        echo '<ol>
-                <li><a href="">Link 1</a></li>
-                <li><a href="">Link 2</a></li>
-                <li><a href="">Link 3</a></li>
-              </ol>';
+        echo    "<menu>  
+                  <li><a href=''>TESTE</a></li>  
+                  <li><a href=''>TESTE</a></li>  
+                  <li><a href=''>TESTE</a></li>  
+                  <li><a href=''>TESTE</a></li>  
+                </menu>  ";
         echo '</div>';
         echo '</body>';
     }
