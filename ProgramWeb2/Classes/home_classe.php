@@ -1,5 +1,6 @@
 <?php
   include 'Classes/body_classe.php';
+  include 'Classes/menu_classe.php';
   include 'Classes/meta_classe.php';
   include 'Classes/html_classe.php';
 
@@ -12,11 +13,24 @@
       $classe = new meta_classe();
       $classe->metaHtml();
 
-      $classeBody = new body_classe();
-      $classeBody->bodyHtml();
+      $classeBodyIni = new body_classe();
+      $classeBodyIni->bodyHtmlIni();
+
+      $classeMenuIni = new menu_classe();
+      $classeMenuIni->menuHtmlIni();
       
-      $classehtmlfim = new html_classe();
-      $classehtmlfim->tagHtmlfim();
+      $lista = array('Item 1','Item 2' ,'Item 3');
+      $classeMenuLista = new menu_classe();
+      $classeMenuLista->mostraMenu($lista);
+     
+      $classeMenuFim = new menu_classe();
+      $classeMenuFim->menuHtmlFim();
+
+      $classeBodyFim = new body_classe();
+      $classeBodyFim->bodyHtmlFim();
+      
+      $classeHtmlfim = new html_classe();
+      $classeHtmlfim->tagHtmlfim();
     }
 
   }
