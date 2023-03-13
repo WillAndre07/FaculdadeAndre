@@ -19,7 +19,7 @@
       $classeMenuIni = new menu_classe();
       $classeMenuIni->menuHtmlIni();
       
-      $lista = array('Item 1','Item 2' ,'Item 3');
+      $lista = array('Item 1', 'Item 2' ,'Item 3');
       $classeMenuLista = new menu_classe();
       $classeMenuLista->mostraMenu($lista);
      
