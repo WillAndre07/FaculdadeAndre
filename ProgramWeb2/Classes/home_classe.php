@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   include 'Classes/body_classe.php';
   include 'Classes/menu_classe.php';
   include 'Classes/meta_classe.php';
@@ -19,6 +21,11 @@
 
       $classeForm = new form_classe();
       $classeForm->Cadastrar();
+
+      $_SESSION['tit_not'] = $_POST['tit_not'];
+      $_SESSION['res_not'] = $_POST['res_not'];
+      $_SESSION['img_not'] = $_POST['img_not'];
+      $_SESSION['dat_not'] = $_POST['dat_not'];
 
       $classeBodyFim = new body_classe();
       $classeBodyFim->bodyHtmlFim();
