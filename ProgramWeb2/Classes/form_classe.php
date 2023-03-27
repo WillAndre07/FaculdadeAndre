@@ -10,7 +10,7 @@
       }
 
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $titulo = $_POST['titulo'];
+        $titulo = $_POST['titulo']; 
         $corpo = $_POST['corpo'];
         $data = $_POST['data'];
     
