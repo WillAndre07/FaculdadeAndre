@@ -2,7 +2,7 @@
   session_start();
 
   class form_classe {
-   
+    
     public function Cadastrar(){
 
       if (!isset($_SESSION['noticias'])) {
