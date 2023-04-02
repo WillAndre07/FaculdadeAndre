@@ -1,56 +1,66 @@
 <?php
-  class conexao_classe{
 
-    public $server;
-    public $database;
-    public $username;
-    public $password;
+  class conexao_classe {
+    private $host;
+    private $user;
+    private $senha;
+    private $banco;
+    private $conexao;
 
-    public function getServername(){
-      return $this -> server;
-    }    
-  
-    public function setServername($server){
-      $this->server = $server;
-    } 
-    
-    public function getDatabase(){
-      return $this -> database;
-    }    
-  
-    public function setDatabase($database){
-      $this->database = $database;
-    } 
-
-    public function getUsername(){
-      return $this -> username;
-    }    
-  
-    public function setUsername($username){
-      $this->username = $username;
-    } 
-
-    public function getPassword(){
-      return $this -> password;
-    }    
-  
-    public function setPassword($password){
-      $this->password = $password;
-    } 
-
-  public function conexao(){
-    $server = 'localhost';
-    $database = 'progam_web2';
-    $username = 'root';
-    $password = '';
-
-    //Criando conexão
-    $conn = mysqli_connect($server,$username,$password,$database);
-
-    //Check
-    if(!$conn){
-      die("Falha na coneção". mysqli_connect_error());
+    public function __construct($host, $user, $senha, $banco) {
+        $this->host = $host;
+        $this->user = $user;
+        $this->senha = $senha;
+        $this->banco = $banco;
     }
-  }
+
+    public function getHost() {
+        return $this->host;
+    }
+
+    public function getUser() {
+        return $this->user;
+    }
+
+    public function getSenha() {
+        return $this->senha;
+    }
+
+    public function getBanco() {
+        return $this->banco;
+    }
+
+    public function setHost($host) {
+        $this->host = $host;
+    }
+
+    public function setUser($user) {
+        $this->user = $user;
+    }
+
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+    public function setBanco($banco) {
+        $this->banco = $banco;
+    }
+
+    public function conectar() {
+        $this->conexao = mysqli_connect($this->host, $this->user, $this->senha, $this->banco);
+
+        if (!$this->conexao) {
+            die('Erro de conexão: ' . mysqli_connect_error());
+        }
+    }
+
+    public function desconectar() {
+        mysqli_close($this->conexao);
+    }
+
+    public function getConexao() {
+        return $this->conexao;
+    }
+
 }
 ?>

@@ -2,6 +2,7 @@
   include 'Classes/body_classe.php';
   include 'Classes/meta_classe.php';
   include 'Classes/html_classe.php';
+  include 'Classes/menu_classe.php';
 
   class home_classe {
 
@@ -15,8 +16,9 @@
       $classeBodyIni = new body_classe();
       $classeBodyIni->bodyHtmlIni();
 
-      echo 'isso é um teste';
-      
+      $classeMenuIni = new menu_classe();
+      $classeMenuIni->listaMenu();
+
       $classeBodyFim = new body_classe();
       $classeBodyFim->bodyHtmlFim();
       
