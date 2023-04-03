@@ -16,12 +16,8 @@
       $classeBodyIni = new body_classe();
       $classeBodyIni->bodyHtmlIni();
 
-<<<<<<< HEAD
-      
-=======
       $classeMenuIni = new menu_classe();
       $classeMenuIni->listaMenu();
->>>>>>> 444a77ba6f9e415c52a888eb58e764ee6becab78
 
       $classeBodyFim = new body_classe();
       $classeBodyFim->bodyHtmlFim();

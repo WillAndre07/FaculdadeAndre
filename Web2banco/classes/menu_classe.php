@@ -6,16 +6,16 @@
     public function listaMenu(){
 
       $conexao = new conexao_classe();
-      $conexao->__construct();
+      $banco = $conexao->conexaoBanco();
+      $sql = 'SELECT acao, texto FROM menu';
+      $query = $banco->prepare($sql);
+      $query->execute(); 
       
-      $sql = 'select acao, texto FROM menu';
-     // $result = mysqli_query($conexao, $sql);
-
-      /*echo '<ol>';
-      foreach($result as $item){
-        echo '<li><a href='$item['acao']'</a>'$item['texto']'</li>';
+      echo '<ol>';
+      foreach($query->fetchAll() as $item){
+        echo '<li><a href='.$item[0].'>'.$item[1].'</li>';
       }
-      echo '</ol>';*/
+      echo '</ol>';
     }
 
   }
