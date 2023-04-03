@@ -15,8 +15,8 @@
       $classeBodyIni = new body_classe();
       $classeBodyIni->bodyHtmlIni();
 
-      echo 'isso é um teste';
       
+
       $classeBodyFim = new body_classe();
       $classeBodyFim->bodyHtmlFim();
       
