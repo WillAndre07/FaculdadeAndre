@@ -4,16 +4,18 @@
   class menu_classe{
     
     public function listaMenu(){
-      $host = 'localhost';
-      $user = 'root';
-      $senha = '';
-      $banco = 'ati_web2';
-  
-      $conexao = new conexao_classe($host, $user, $senha, $banco);
-      $conexao->conectar();
 
-      $result = mysqli_query($conexao, "SELECT * FROM menu");
-      echo $result;
+      $conexao = new conexao_classe();
+      $conexao->__construct();
+      
+      $sql = 'select acao, texto FROM menu';
+      $result = mysqli_query($conexao, $sql);
+      echo  $result;
+      /*echo '<ol>';
+      foreach($result as $item){
+        echo '<li><a href='$item['acao']'</a>'$item['texto']'</li>';
+      }
+      echo '</ol>';*/
     }
 
   }
