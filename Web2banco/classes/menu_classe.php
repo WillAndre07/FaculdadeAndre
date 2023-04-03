@@ -9,8 +9,8 @@
       $conexao->__construct();
       
       $sql = 'select acao, texto FROM menu';
-      $result = mysqli_query($conexao, $sql);
-      echo  $result;
+     // $result = mysqli_query($conexao, $sql);
+
       /*echo '<ol>';
       foreach($result as $item){
         echo '<li><a href='$item['acao']'</a>'$item['texto']'</li>';
