@@ -19,6 +19,9 @@
       $classeMenuIni = new menu_classe();
       $classeMenuIni->listaMenu();
 
+      $classeMenuLista = new menu_classe();
+      $classeMenuLista->listaComando();
+
       $classeBodyFim = new body_classe();
       $classeBodyFim->bodyHtmlFim();
       
