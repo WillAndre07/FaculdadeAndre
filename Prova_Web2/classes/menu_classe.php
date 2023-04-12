@@ -1,5 +1,4 @@
 <?php
-  include 'Classes/conexao_classe.php';
 
   class menu_classe{
     
@@ -9,7 +8,7 @@
       $banco = $conexao->conexaoBanco();
       $sql = 'SELECT acao, nome FROM menu';
       $query = $banco->prepare($sql);
-      $query->execute(); 
+      $query->execute();  
       
       echo '<ol>';
       foreach($query->fetchAll() as $item){
@@ -32,8 +31,9 @@
 
         echo '<ol>';
         foreach($queryregiao->fetchAll() as $itemregiao){
-          echo '<li><a class="page-item active" href='.'?pagina='.$itemregiao[0].'>'.$itemregiao[1].'</li>';
-          echo "<a href='alterar_classe.php?id=$itemregiao[0]' class='btn btn-primary'>Editar</a>'";
+          echo '<li>'.$itemregiao[1].'</li>';
+          echo '<button class="btn btn-primary">Editar</button>';
+          echo '<a class="btn btn-danger" href="excluir.php?id='.$itemregiao[0].'">Excluir</a>';
         }
         echo '</ol>';
       }

@@ -3,6 +3,7 @@
   include 'Classes/meta_classe.php';
   include 'Classes/html_classe.php';
   include 'Classes/menu_classe.php';
+  include 'Classes/conexao_classe.php';
 
   class home_classe {
 

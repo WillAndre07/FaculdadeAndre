@@ -20,6 +20,9 @@
       $classeForm = new form_classe();
       $classeForm->Cadastrar();
 
+      $classeForm = new alterar_classe();
+      $classeForm->updateBanco();
+
       $classeBodyFim = new body_classe();
       $classeBodyFim->bodyHtmlFim();
       
