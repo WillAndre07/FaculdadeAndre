@@ -7,7 +7,7 @@
 
       $conexao = new conexao_classe();
       $banco = $conexao->conexaoBanco();
-      $sql = 'SELECT acao, texto FROM menu';
+      $sql = 'SELECT acao, nome FROM menu';
       $query = $banco->prepare($sql);
       $query->execute(); 
       
@@ -25,14 +25,14 @@
 
       $query_string = $_SERVER['QUERY_STRING'];
 
-      if ($query_string == 'pagina=lista_pessoa'){
-        $sqlpessoa = 'SELECT id, nome, email FROM pessoa';
-        $querypessoa = $banco->prepare($sqlpessoa);
-        $querypessoa->execute();
+      if ($query_string == 'pagina=lista_regiao'){
+        $sqlpessoa = 'SELECT nome FROM regiao';
+        $queryregiao = $banco->prepare($sqlpessoa);
+        $queryregiao->execute();
 
         echo '<ol>';
-        foreach($querypessoa->fetchAll() as $itempessoa){
-          echo '<li>'.$itempessoa[1].' '.$itempessoa[2].'</li>';
+        foreach($queryregiao->fetchAll() as $itemregiao){
+          echo '<li>'.$itemregiao[0].'</li>';
         }
         echo '</ol>';
       } else if ($query_string == 'pagina=lista_produto'){
