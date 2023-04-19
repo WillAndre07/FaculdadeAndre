@@ -56,8 +56,6 @@
         $sql = "DELETE FROM regiao where IDRegiao = $id";
         $queryexcluir = $banco->prepare($sql);
         $queryexcluir->execute();
-
-        header("Location: menu_classe.php");
       }
     }
 

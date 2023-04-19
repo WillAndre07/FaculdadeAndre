@@ -29,6 +29,10 @@
       $classeMenuLista = new menu_classe();
       $classeMenuLista->listaComando();
 
+      $classeMenuExe = new menu_classe();
+      $classeMenuExe->excluirReg();
+
+
       $classeBodyFim = new body_classe();
       $classeBodyFim->bodyHtmlFim();
       
