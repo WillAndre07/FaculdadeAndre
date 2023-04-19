@@ -7,15 +7,23 @@
 
       $conexao = new conexao_classe();
       $banco = $conexao->conexaoBanco();
-      $sql = 'SELECT acao, nome FROM menu';
+      $sql = 'SELECT acao, texto, id FROM menu';
       $query = $banco->prepare($sql);
       $query->execute(); 
       
-      echo '<ol>';
+      echo '<table>';
+          echo '<tr style="background-color: #04AA6D; text-align: left; color: white; font-family: Arial, Helvetica, sans-serif; border: 6px;">';
+            echo '<th>Id</th>';
+            echo '<th style="width: 100%; ">Nome</th>';
+          echo '</tr>';
+
       foreach($query->fetchAll() as $item){
-        echo '<li><a href='.$item[0].'>'.$item[1].'</li>';
+        echo '<tr>';
+         echo '<td>'.$item[2].'</td>';
+         echo '<td><a href='.$item[0].'>'.$item[1].'</td>';
       }
-      echo '</ol>';
+        echo '</tr>';
+      echo '</table>';
     }
 
     public function listaComando(){
@@ -25,16 +33,27 @@
 
       $query_string = $_SERVER['QUERY_STRING'];
 
-      if ($query_string == 'pagina=lista_regiao'){
-        $sqlpessoa = 'SELECT nome FROM regiao';
-        $queryregiao = $banco->prepare($sqlpessoa);
-        $queryregiao->execute();
+      if ($query_string == 'pagina=lista_pessoa'){
+        $sqlpessoa = 'SELECT id, nome, email FROM pessoa';
+        $querypessoa = $banco->prepare($sqlpessoa);
+        $querypessoa->execute();
 
-        echo '<ol>';
-        foreach($queryregiao->fetchAll() as $itemregiao){
-          echo '<li>'.$itemregiao[0].'</li>';
+        echo '<table>';
+          echo '<tr style="background-color: lightgray; text-align: left; color: white; font-family: Arial, Helvetica, sans-serif; border: 6px;">';
+            echo '<th>Id</th>';
+            echo '<th>Nome</th>';
+            echo '<th>Email</th>';
+          echo '</tr>';
+        foreach($querypessoa->fetchAll() as $itempessoa){
+          echo '<tr>';
+           echo '<td>'.$itempessoa[0].'</td>';
+           echo '<td>'.$itempessoa[1].'</td>';
+           echo '<td>'.$itempessoa[2].'</td>';
+           echo '<td><form method="get"><input type="hidden" name="id" value="'.$itempessoa[0].'"><button type="submit" class="btn btn-danger">Excluir</button></form></td>';
+           echo '<td><form method="get"><input type="hidden" name="id" value="'.$itempessoa[0].'"><button type="submit" class="btn btn-primary">Alterar</button></form></td>';
         }
-        echo '</ol>';
+        echo '</tr>';
+        echo '</table>';
       } else if ($query_string == 'pagina=lista_produto'){
           $sqlproduto= 'SELECT id, nome, valor, total_estoque FROM produto';
           $queryproduto = $banco->prepare($sqlproduto);
