@@ -28,16 +28,63 @@
         $sqlregiao = 'SELECT IDRegiao ,DescricaoRegiao FROM regiao';
         $queryregiao = $banco->prepare($sqlregiao);
         $queryregiao->execute();
-
-        echo '<ol>';
+      
+        echo '<table>';
+          echo '<tr>';
+            echo '<th>Id</th>';
+            echo '<th>Nome</th>';
+          echo '</tr>';
+          
         foreach($queryregiao->fetchAll() as $itemregiao){
-          echo '<li>'.$itemregiao[1].'</li>';
-          echo '<button class="btn btn-primary">Editar</button>';
-          echo '<a class="btn btn-danger" href="excluir.php?id='.$itemregiao[0].'">Excluir</a>';
+          echo '<tr>';
+            echo '<td>'.$itemregiao[0].'</td>';
+            echo '<td>'.$itemregiao[1].'</td>';
+            echo '<td><form method="get"><input type="hidden" name="id" value="'.$itemregiao[0].'"><button type="submit" class="btn btn-danger">Excluir</button></form></td>';
+            echo '<td><form method="get"><input type="hidden" name="id" value="'.$itemregiao[0].'"><button type="submit" class="btn btn-primary">Alterar</button></form></td>';
         }
-        echo '</ol>';
+        echo '</tr>';
+        echo '</table>';
       }
     }
-  }
 
+    public function excluirReg(){
+      $conexao = new conexao_classe();
+      $banco = $conexao->conexaoBanco();
+
+      if(isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $sql = "DELETE FROM regiao where IDRegiao = $id";
+        $queryexcluir = $banco->prepare($sql);
+        $queryexcluir->execute();
+
+        header("Location: menu_classe.php");
+      }
+    }
+
+    public function inserirReg(){
+      $cadastrar = '<h4>Cadastrar</h4>
+                   <form method="post">
+                      <input type="text" name="id" placeholder="id" required><br>
+                      <input type="text" name="nome" placeholder="Nome da Região" required><br>
+                      <button type="submit" class="btn btn-primary">Enviar</button> 
+                  </form>';
+      echo $cadastrar;
+    }
+
+    public function cadastrarRegiao() {
+      $conexao = new conexao_classe();
+      $banco = $conexao->conexaoBanco();
+
+      if(isset($_POST['id'])) {
+          $id = $_POST['id'];
+          $nome = $_POST['nome'];
+          $sql = "INSERT INTO regiao (IDRegiao, DescricaoRegiao) VALUES (?, ?)";
+          $queryinserir = $banco->prepare($sql);
+          $queryinserir->execute([$id, $nome]);
+  
+          header("Location: index.php");
+          exit;
+      }
+  } 
+}
 ?>

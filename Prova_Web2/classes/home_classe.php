@@ -17,6 +17,12 @@
       $classeBodyIni = new body_classe();
       $classeBodyIni->bodyHtmlIni();
 
+      $classeMenuIns = new menu_classe();
+      $classeMenuIns->inserirReg();
+
+      $classeMenuIns = new menu_classe();
+      $classeMenuIns->cadastrarRegiao();
+
       $classeMenuIni = new menu_classe();
       $classeMenuIni->listaMenu();
 
