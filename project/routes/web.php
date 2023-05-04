@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home','/app/Http/Controllers/HomeController@home');
+Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/filmes','/app/Http/Controllers/FilmesController@filmes'); 
+Route::get('/home', '\App\Http\Controllers\HomeController@home');
 
-Route::get('/contato', '/app/Http/Controllers/ContatoController@contato');
-    
-Route::post('/contato', '/app/Http/Controllers/ContatoResultadoController@contato_resultado');
+Route::get('/filmes', [FilmesController::class, 'filmes']);
+
+Route::get('/contato', [ContatoController::class, 'contato']);    
+
+Route::get('/contato_resultado', [ContatoResultadoController::class, 'contato_resultado']);

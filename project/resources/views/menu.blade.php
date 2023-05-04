@@ -5,14 +5,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('home') }}">Home</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
             </li>
-            <li class="nav-item {{ Request::is('filmes') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('filmes') }}">Filmes</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/filmes">Filmes</a>
             </li>
-            <li class="nav-item {{ Request::is('contato') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('contato.form') }}">Contato</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/contato">Contato</a>
             </li>
         </ul>
     </div>
