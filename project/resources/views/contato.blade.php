@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Entre em contato</h1>
-    <form action="{{ route('contato.submit') }}" method="POST">
+    <form action="/contato_resultado" method="POST">
         @csrf
         <div class="form-group">
             <label for="nome">Nome</label>
@@ -21,3 +21,4 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 @endsection
+

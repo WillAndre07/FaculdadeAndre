@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\FilmesController;
+use \App\Http\Controllers\ContatoController;
+use \App\Http\Controllers\ContatoResultadoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +18,10 @@ use \App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/home', '\App\Http\Controllers\HomeController@home');
+Route::get('/home', [HomeController::class, 'home']);
 
 Route::get('/filmes', [FilmesController::class, 'filmes']);
 
 Route::get('/contato', [ContatoController::class, 'contato']);    
 
-Route::get('/contato_resultado', [ContatoResultadoController::class, 'contato_resultado']);
+Route::post('/contato_resultado', [ContatoResultadoController::class, 'contato_resultado']);
