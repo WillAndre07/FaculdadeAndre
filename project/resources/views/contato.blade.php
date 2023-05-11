@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Entre em contato</h1>
-    <hr>
+    <hr style="border-top: 1px dashed red;">
     <form action="/contato_resultado" method="POST">
         @csrf
         <div class="form-group">

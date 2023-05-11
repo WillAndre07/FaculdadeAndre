@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Filmes</h1>
-    <hr>
+    <hr style="border-top: 1px dashed red;">
     <ul>
         @foreach ($filmes as $filme)
             <li>{{ $filme }}</li>
