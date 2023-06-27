@@ -5,6 +5,8 @@ use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\FilmesController;
 use \App\Http\Controllers\ContatoController;
 use \App\Http\Controllers\ContatoResultadoController;
+use App\Http\Controllers\FilmeCreate;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,10 @@ use \App\Http\Controllers\ContatoResultadoController;
 Route::get('/', [HomeController::class, 'home']);
 
 Route::get('/home', [HomeController::class, 'home']);
+
+Route::get('/filmes_create', [FilmeCreate::class, 'create']);
+
+Route::post('/filmes_create', [FilmeCreate::class, 'store'])->name('filmes.store');
 
 Route::get('/filmes', [FilmesController::class, 'filmes']);
 

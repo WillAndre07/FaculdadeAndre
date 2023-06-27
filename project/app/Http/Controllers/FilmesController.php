@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\filmes;
+use Illuminate\Support\Facades\DB;
 
 class FilmesController extends Controller
 {
     public function filmes(){
-        $filmes = ['Resident Evil', 'Naruto', 'One Piece','Tomb Raiderd'];
-        return view('filmes', ['filmes' => $filmes]);
+        $filmes = filmes::select('id', 'titulo')->get();
+        return view('filmes', compact('filmes'));
     }
+    
 }
