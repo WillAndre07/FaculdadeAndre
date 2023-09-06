@@ -10,8 +10,15 @@
     <hr style="border-top: 1px dashed red;">
 
     <ul>
-        @foreach ($filmes as $filme)
-            <li>{{ $filme->titulo }}</li>
-        @endforeach
+        <div>
+            @foreach ($filmes as $filme)
+                <li>{{ $filme->id }} - {{ $filme->titulo }}</li>
+                <form action="{{ route('filmes.destroy', $filme->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"  class="btn btn-danger">Excluir</button>
+                </form>
+            @endforeach
+        </div>
     </ul>
 @endsection

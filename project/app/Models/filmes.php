@@ -10,5 +10,5 @@ class filmes extends Model
 
     protected $table = 'filmes';
     
-    protected $fillable = ['Titulo'];
+    protected $fillable = ['id','Titulo'];
 }

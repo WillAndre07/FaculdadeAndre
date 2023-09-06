@@ -7,6 +7,7 @@ use \App\Http\Controllers\ContatoController;
 use \App\Http\Controllers\ContatoResultadoController;
 use App\Http\Controllers\FilmeCreate;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,8 @@ Route::get('/filmes_create', [FilmeCreate::class, 'create']);
 Route::post('/filmes_create', [FilmeCreate::class, 'store'])->name('filmes.store');
 
 Route::get('/filmes', [FilmesController::class, 'filmes']);
+
+Route::delete('/filmes/{id}',  [FilmesController::class, 'destroy'])->name('filmes.destroy');
 
 Route::get('/contato', [ContatoController::class, 'contato']);    
 

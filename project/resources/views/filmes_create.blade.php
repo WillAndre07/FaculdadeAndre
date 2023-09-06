@@ -7,10 +7,10 @@
         @csrf
 
         <div class="form-group">
-          <label for="titulo">Título:</label>
-          <input type="text" name="titulo" id="titulo" class="form-control">
+          <label>Título:</label>
+          <input type="text" name="Titulo" id="Titulo" class="form-control">
         </div>
-
+        <hr style="border-top: 1px dashed red;"> 
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
 @endsection

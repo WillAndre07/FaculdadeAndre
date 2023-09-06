@@ -14,11 +14,14 @@ class FilmeCreate extends Controller
     public function store(Request $request)
     {
         // Validação dos dados enviados no formulário
-        $validatedData = $request->all();
+        $validatedData = $request->validate([
+            'Titulo' => 'required|string'
+        ]);
     
         // Criação do novo filme no banco de dados
         filmes::create($validatedData);
     
-        return redirect('/filmes')->with('success', 'Filme criado com sucesso!');
+        return redirect('/filmes');
     }
+
 }
