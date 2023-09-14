@@ -1,39 +1,63 @@
-body{
+body {
   background-color: white;
 }
 
-.h1-1{
+.h1-1 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 100;
 }
 
-.img-nav{
+.img-nav {
   width: 75px;
-  height: 75px;  
+  height: 75px;
 }
 
-.div-nav-img{
+.div-nav-img {
   margin: 10px;
 }
 
-.div-1{
+.div-1 {
   text-align: center;
 }
 
-.links-1{
-  width: 100px;  
+.links-1 {
+  width: 100px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.img-grid{
+.img-grid {
   width: 300px;
   height: 300px;
 }
 
-.div-img{
+.div-img {
   display: grid;
   grid: auto / 50% 50%;
   justify-items: center;
   row-gap: 100px;
+}
+
+.h4-1 {
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+}
+
+.h4-2 {
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+}
+
+.h4-3 {
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+}
+
+.h4-4 {
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
 }
