@@ -132,31 +132,31 @@ $oGrafo->adicionaVertice('RO1');
 
 
 $oGrafo->adicionaAresta('RS1', 'RS2', 12);
-$oGrafo->adicionaAresta('RS1', 'SC1', 6);
+$oGrafo->adicionaAresta('RS1', 'SC1', 5);
 $oGrafo->adicionaAresta('RS1', 'SC2', 3);
 
 $oGrafo->adicionaAresta('RS2', 'RS1', 12);
 $oGrafo->adicionaAresta('RS2', 'SC1', 2);
 $oGrafo->adicionaAresta('RS2', 'SC2', 2);
 
-$oGrafo->adicionaAresta('SC1', 'SC2', 5);
-$oGrafo->adicionaAresta('SC1', 'PR1', 2);
-$oGrafo->adicionaAresta('SC1', 'RS1', 6);
-$oGrafo->adicionaAresta('SC1', 'RS2', 1);
-$oGrafo->adicionaAresta('SC1', 'AC1', 1);
+$oGrafo->adicionaAresta('SC1', 'SC2', 6);
+$oGrafo->adicionaAresta('SC1', 'PR1', 1);
+$oGrafo->adicionaAresta('SC1', 'RS1', 5);
+$oGrafo->adicionaAresta('SC1', 'RS2', 2);
+$oGrafo->adicionaAresta('SC1', 'AC1', 10);
 
-$oGrafo->adicionaAresta('SC2', 'PR2', 3);
-$oGrafo->adicionaAresta('SC2', 'SC1', 5);
-$oGrafo->adicionaAresta('SC2', 'RS1', 6);
-$oGrafo->adicionaAresta('SC2', 'RS2', 1);
-$oGrafo->adicionaAresta('SC2', 'SP3', 1);
+$oGrafo->adicionaAresta('SC2', 'PR2', 1);
+$oGrafo->adicionaAresta('SC2', 'SC1', 6);
+$oGrafo->adicionaAresta('SC2', 'RS1', 3);
+$oGrafo->adicionaAresta('SC2', 'RS2', 2);
+$oGrafo->adicionaAresta('SC2', 'SP3', 5);
 
-$oGrafo->adicionaAresta('PR1', 'PR2', 1);
-$oGrafo->adicionaAresta('PR1', 'SC1', 2);
+$oGrafo->adicionaAresta('PR1', 'PR2', 2);
+$oGrafo->adicionaAresta('PR1', 'SC1', 1);
 $oGrafo->adicionaAresta('PR1', 'SP2', 3);
 
-$oGrafo->adicionaAresta('PR2', 'PR1', 1);
-$oGrafo->adicionaAresta('PR2', 'SC2', 2);
+$oGrafo->adicionaAresta('PR2', 'PR1', 2);
+$oGrafo->adicionaAresta('PR2', 'SC2', 1);
 $oGrafo->adicionaAresta('PR2', 'SP3', 2);
 
 $oGrafo->adicionaAresta('SP1', 'SP2', 2);
@@ -164,186 +164,186 @@ $oGrafo->adicionaAresta('SP1', 'SP4', 10);
 $oGrafo->adicionaAresta('SP1', 'MG3', 2);
 $oGrafo->adicionaAresta('SP1', 'MS1', 7);
 
-$oGrafo->adicionaAresta('SP2', 'SP1', 3);
-$oGrafo->adicionaAresta('SP2', 'PR1', 2);
-$oGrafo->adicionaAresta('SP2', 'MS1', 5);
-$oGrafo->adicionaAresta('SP2', 'SP3', 8);
+$oGrafo->adicionaAresta('SP2', 'SP1', 2);
+$oGrafo->adicionaAresta('SP2', 'PR1', 3);
+$oGrafo->adicionaAresta('SP2', 'MS1', 8);
+$oGrafo->adicionaAresta('SP2', 'SP3', 5);
 
-$oGrafo->adicionaAresta('SP3', 'SP4', 5);
-$oGrafo->adicionaAresta('SP3', 'SP5', 2);
-$oGrafo->adicionaAresta('SP3', 'PR2', 5);
-$oGrafo->adicionaAresta('SP3', 'SC2', 6);
-$oGrafo->adicionaAresta('SP3', 'SP2', 13);
+$oGrafo->adicionaAresta('SP3', 'SP4', 6);
+$oGrafo->adicionaAresta('SP3', 'SP5', 13);
+$oGrafo->adicionaAresta('SP3', 'PR2', 2);
+$oGrafo->adicionaAresta('SP3', 'SC2', 5);
+$oGrafo->adicionaAresta('SP3', 'SP2', 5);
 
-$oGrafo->adicionaAresta('SP4', 'SP3', 10);
-$oGrafo->adicionaAresta('SP4', 'SP5', 6);
-$oGrafo->adicionaAresta('SP4', 'MG1', 3);
-$oGrafo->adicionaAresta('SP4', 'MG3', 4);
-$oGrafo->adicionaAresta('SP4', 'SP1', 1);
+$oGrafo->adicionaAresta('SP4', 'SP3', 6);
+$oGrafo->adicionaAresta('SP4', 'SP5', 3);
+$oGrafo->adicionaAresta('SP4', 'MG1', 4);
+$oGrafo->adicionaAresta('SP4', 'MG3', 1);
+$oGrafo->adicionaAresta('SP4', 'SP1', 10);
 
 $oGrafo->adicionaAresta('SP5', 'SP3', 13);
 $oGrafo->adicionaAresta('SP5', 'SP4', 3);
 $oGrafo->adicionaAresta('SP5', 'MG1', 7);
 $oGrafo->adicionaAresta('SP5', 'RJ3', 1);
 
-$oGrafo->adicionaAresta('MG1', 'RJ1', 4);
-$oGrafo->adicionaAresta('MG1', 'RJ2', 7);
-$oGrafo->adicionaAresta('MG1', 'SP5', 2);
-$oGrafo->adicionaAresta('MG1', 'SP4', 2);
+$oGrafo->adicionaAresta('MG1', 'RJ1', 2);
+$oGrafo->adicionaAresta('MG1', 'RJ2', 2);
+$oGrafo->adicionaAresta('MG1', 'SP5', 7);
+$oGrafo->adicionaAresta('MG1', 'SP4', 4);
 $oGrafo->adicionaAresta('MG1', 'MG3', 2);
 $oGrafo->adicionaAresta('MG1', 'DF1', 9);
 
-$oGrafo->adicionaAresta('MG2', 'DF1', 15);
-$oGrafo->adicionaAresta('MG2', 'ES1', 2);
+$oGrafo->adicionaAresta('MG2', 'DF1', 2);
+$oGrafo->adicionaAresta('MG2', 'ES1', 15);
 $oGrafo->adicionaAresta('MG2', 'BA1', 12);
 
-$oGrafo->adicionaAresta('MG3', 'DF1', 2);
-$oGrafo->adicionaAresta('MG3', 'SP1', 1);
-$oGrafo->adicionaAresta('MG3', 'SP4', 2);
-$oGrafo->adicionaAresta('MG3', 'MG1', 3);
+$oGrafo->adicionaAresta('MG3', 'DF1', 3);
+$oGrafo->adicionaAresta('MG3', 'SP1', 2);
+$oGrafo->adicionaAresta('MG3', 'SP4', 1);
+$oGrafo->adicionaAresta('MG3', 'MG1', 2);
 
-$oGrafo->adicionaAresta('RJ1', 'RJ2', 2);
-$oGrafo->adicionaAresta('RJ1', 'MG1', 8);
+$oGrafo->adicionaAresta('RJ1', 'RJ2', 8);
+$oGrafo->adicionaAresta('RJ1', 'MG1', 2);
 $oGrafo->adicionaAresta('RJ1', 'ES1', 7);
 
-$oGrafo->adicionaAresta('RJ2', 'RJ1', 2);
-$oGrafo->adicionaAresta('RJ2', 'MG1', 8);
+$oGrafo->adicionaAresta('RJ2', 'RJ1', 8);
+$oGrafo->adicionaAresta('RJ2', 'MG1', 2);
 $oGrafo->adicionaAresta('RJ2', 'RJ3', 1);
 
 $oGrafo->adicionaAresta('RJ3', 'RJ2', 1);
 $oGrafo->adicionaAresta('RJ3', 'SP5', 1);
 
-$oGrafo->adicionaAresta('ES1', 'RJ1', 15);
-$oGrafo->adicionaAresta('ES1', 'DF1', 7);
-$oGrafo->adicionaAresta('ES1', 'MG2', 9);
+$oGrafo->adicionaAresta('ES1', 'RJ1', 7);
+$oGrafo->adicionaAresta('ES1', 'DF1', 9);
+$oGrafo->adicionaAresta('ES1', 'MG2', 15);
 $oGrafo->adicionaAresta('ES1', 'SE1', 4);
 
-$oGrafo->adicionaAresta('MS1', 'RO1', 7);
-$oGrafo->adicionaAresta('MS1', 'MT1', 8);
-$oGrafo->adicionaAresta('MS1', 'SP2', 7);
-$oGrafo->adicionaAresta('MS1', 'SP1', 15);
-$oGrafo->adicionaAresta('MS1', 'GO1', 17);
+$oGrafo->adicionaAresta('MS1', 'RO1', 17);
+$oGrafo->adicionaAresta('MS1', 'MT1', 15);
+$oGrafo->adicionaAresta('MS1', 'SP2', 8);
+$oGrafo->adicionaAresta('MS1', 'SP1', 7);
+$oGrafo->adicionaAresta('MS1', 'GO1', 7);
 
 $oGrafo->adicionaAresta('GO1', 'MS1', 7);
 $oGrafo->adicionaAresta('GO1', 'GO2', 8);
 $oGrafo->adicionaAresta('GO1', 'DF1', 1);
 
 $oGrafo->adicionaAresta('GO2', 'GO1', 8);
-$oGrafo->adicionaAresta('GO2', 'MT1', 2);
-$oGrafo->adicionaAresta('GO2', 'DF1', 18);
+$oGrafo->adicionaAresta('GO2', 'MT1', 18);
+$oGrafo->adicionaAresta('GO2', 'DF1', 2);
 
-$oGrafo->adicionaAresta('DF1', 'GO2', 9);
-$oGrafo->adicionaAresta('DF1', 'GO1', 2);
+$oGrafo->adicionaAresta('DF1', 'GO2', 2);
+$oGrafo->adicionaAresta('DF1', 'GO1', 1);
 $oGrafo->adicionaAresta('DF1', 'MG3', 3);
 $oGrafo->adicionaAresta('DF1', 'MG1', 9);
-$oGrafo->adicionaAresta('DF1', 'ES1', 1);
+$oGrafo->adicionaAresta('DF1', 'ES1', 9);
 $oGrafo->adicionaAresta('DF1', 'MG2', 2);
 $oGrafo->adicionaAresta('DF1', 'BA2', 11);
 $oGrafo->adicionaAresta('DF1', 'TO1', 7);
 
 $oGrafo->adicionaAresta('BA1', 'MG2', 12);
 $oGrafo->adicionaAresta('BA1', 'BA2', 6);
-$oGrafo->adicionaAresta('BA1', 'PI1', 2);
-$oGrafo->adicionaAresta('BA1', 'PE2', 4);
-$oGrafo->adicionaAresta('BA1', 'SE1', 3);
+$oGrafo->adicionaAresta('BA1', 'PI1', 4);
+$oGrafo->adicionaAresta('BA1', 'PE2', 3);
+$oGrafo->adicionaAresta('BA1', 'SE1', 2);
 
-$oGrafo->adicionaAresta('BA2', 'TO1', 11);
-$oGrafo->adicionaAresta('BA2', 'DF1', 6);
-$oGrafo->adicionaAresta('BA2', 'BA1', 14);
+$oGrafo->adicionaAresta('BA2', 'TO1', 14);
+$oGrafo->adicionaAresta('BA2', 'DF1', 11);
+$oGrafo->adicionaAresta('BA2', 'BA1', 6);
 
-$oGrafo->adicionaAresta('MT1', 'RO1', 15);
-$oGrafo->adicionaAresta('MT1', 'MS1', 18);
-$oGrafo->adicionaAresta('MT1', 'GO2', 20);
-$oGrafo->adicionaAresta('MT1', 'TO1', 19);
-$oGrafo->adicionaAresta('MT1', 'PA1', 11);
+$oGrafo->adicionaAresta('MT1', 'RO1', 11);
+$oGrafo->adicionaAresta('MT1', 'MS1', 15);
+$oGrafo->adicionaAresta('MT1', 'GO2', 18);
+$oGrafo->adicionaAresta('MT1', 'TO1', 20);
+$oGrafo->adicionaAresta('MT1', 'PA1', 19);
 
-$oGrafo->adicionaAresta('TO1', 'PA1', 7);
-$oGrafo->adicionaAresta('TO1', 'MA1', 14);
-$oGrafo->adicionaAresta('TO1', 'PI1', 20);
-$oGrafo->adicionaAresta('TO1', 'BA2', 7);
-$oGrafo->adicionaAresta('TO1', 'DF1', 2);
-$oGrafo->adicionaAresta('TO1', 'MT1', 11);
+$oGrafo->adicionaAresta('TO1', 'PA1', 11);
+$oGrafo->adicionaAresta('TO1', 'MA1', 2);
+$oGrafo->adicionaAresta('TO1', 'PI1', 7);
+$oGrafo->adicionaAresta('TO1', 'BA2', 14);
+$oGrafo->adicionaAresta('TO1', 'DF1', 7);
+$oGrafo->adicionaAresta('TO1', 'MT1', 20);
 
-$oGrafo->adicionaAresta('SE1', 'AL1', 4);
-$oGrafo->adicionaAresta('SE1', 'ES1', 2);
+$oGrafo->adicionaAresta('SE1', 'AL1', 2);
+$oGrafo->adicionaAresta('SE1', 'ES1', 4);
 $oGrafo->adicionaAresta('SE1', 'BA1', 2);
 $oGrafo->adicionaAresta('SE1', 'PE2', 2);
 
 $oGrafo->adicionaAresta('PI1', 'BA1', 4);
 $oGrafo->adicionaAresta('PI1', 'TO1', 7);
-$oGrafo->adicionaAresta('PI1', 'PA1', 16);
-$oGrafo->adicionaAresta('PI1', 'MA1', 4);
+$oGrafo->adicionaAresta('PI1', 'PA1', 3);
+$oGrafo->adicionaAresta('PI1', 'MA1', 16);
 $oGrafo->adicionaAresta('PI1', 'CE1', 5);
-$oGrafo->adicionaAresta('PI1', 'PE2', 3);
+$oGrafo->adicionaAresta('PI1', 'PE2', 4);
 
-$oGrafo->adicionaAresta('MA1', 'CE1', 2);
-$oGrafo->adicionaAresta('MA1', 'AP1', 16);
-$oGrafo->adicionaAresta('MA1', 'PA1', 3);
-$oGrafo->adicionaAresta('MA1', 'TO1', 5);
-$oGrafo->adicionaAresta('MA1', 'PI1', 5);
+$oGrafo->adicionaAresta('MA1', 'CE1', 3);
+$oGrafo->adicionaAresta('MA1', 'AP1', 5);
+$oGrafo->adicionaAresta('MA1', 'PA1', 5);
+$oGrafo->adicionaAresta('MA1', 'TO1', 2);
+$oGrafo->adicionaAresta('MA1', 'PI1', 16);
 
-$oGrafo->adicionaAresta('AL1', 'PE1', 2);
-$oGrafo->adicionaAresta('AL1', 'SE1', 1);
+$oGrafo->adicionaAresta('AL1', 'PE1', 1);
+$oGrafo->adicionaAresta('AL1', 'SE1', 2);
 
 $oGrafo->adicionaAresta('PE1', 'PB1', 1);
-$oGrafo->adicionaAresta('PE1', 'AL1', 7);
-$oGrafo->adicionaAresta('PE1', 'PE2', 1);
+$oGrafo->adicionaAresta('PE1', 'AL1', 1);
+$oGrafo->adicionaAresta('PE1', 'PE2', 7);
 
-$oGrafo->adicionaAresta('PE2', 'PE1', 3);
-$oGrafo->adicionaAresta('PE2', 'PB1', 2);
-$oGrafo->adicionaAresta('PE2', 'SE1', 7);
-$oGrafo->adicionaAresta('PE2', 'BA1', 7);
-$oGrafo->adicionaAresta('PE2', 'PI1', 8);
+$oGrafo->adicionaAresta('PE2', 'PE1', 7);
+$oGrafo->adicionaAresta('PE2', 'PB1', 8);
+$oGrafo->adicionaAresta('PE2', 'SE1', 2);
+$oGrafo->adicionaAresta('PE2', 'BA1', 3);
+$oGrafo->adicionaAresta('PE2', 'PI1', 4);
 $oGrafo->adicionaAresta('PE2', 'CE2', 2);
 
 $oGrafo->adicionaAresta('PB1', 'RN1', 1);
-$oGrafo->adicionaAresta('PB1', 'PE1', 8);
-$oGrafo->adicionaAresta('PB1', 'PE2', 1);
+$oGrafo->adicionaAresta('PB1', 'PE1', 1);
+$oGrafo->adicionaAresta('PB1', 'PE2', 8);
 
-$oGrafo->adicionaAresta('CE1', 'RN1', 5);
-$oGrafo->adicionaAresta('CE1', 'CE2', 3);
-$oGrafo->adicionaAresta('CE1', 'MA1', 2);
-$oGrafo->adicionaAresta('CE1', 'PI1', 6);
+$oGrafo->adicionaAresta('CE1', 'RN1', 6);
+$oGrafo->adicionaAresta('CE1', 'CE2', 2);
+$oGrafo->adicionaAresta('CE1', 'MA1', 3);
+$oGrafo->adicionaAresta('CE1', 'PI1', 5);
 
-$oGrafo->adicionaAresta('CE2', 'RN1', 2);
+$oGrafo->adicionaAresta('CE2', 'RN1', 9);
 $oGrafo->adicionaAresta('CE2', 'CE1', 2);
-$oGrafo->adicionaAresta('CE2', 'PE2', 9);
+$oGrafo->adicionaAresta('CE2', 'PE2', 2);
 
-$oGrafo->adicionaAresta('RN1', 'CE1', 1);
-$oGrafo->adicionaAresta('RN1', 'CE2', 6);
-$oGrafo->adicionaAresta('RN1', 'PB1', 9);
+$oGrafo->adicionaAresta('RN1', 'CE1', 6);
+$oGrafo->adicionaAresta('RN1', 'CE2', 9);
+$oGrafo->adicionaAresta('RN1', 'PB1', 1);
 
-$oGrafo->adicionaAresta('PA1', 'AP1', 19);
-$oGrafo->adicionaAresta('PA1', 'RR1', 11);
-$oGrafo->adicionaAresta('PA1', 'AM1', 3);
-$oGrafo->adicionaAresta('PA1', 'RO1', 5);
-$oGrafo->adicionaAresta('PA1', 'MT1', 2);
-$oGrafo->adicionaAresta('PA1', 'TO1', 1);
-$oGrafo->adicionaAresta('PA1', 'PI1', 16);
-$oGrafo->adicionaAresta('PA1', 'MA1', 22);
+$oGrafo->adicionaAresta('PA1', 'AP1', 1);
+$oGrafo->adicionaAresta('PA1', 'RR1', 16);
+$oGrafo->adicionaAresta('PA1', 'AM1', 2);
+$oGrafo->adicionaAresta('PA1', 'RO1', 22);
+$oGrafo->adicionaAresta('PA1', 'MT1', 19);
+$oGrafo->adicionaAresta('PA1', 'TO1', 11);
+$oGrafo->adicionaAresta('PA1', 'PI1', 3);
+$oGrafo->adicionaAresta('PA1', 'MA1', 5);
 
 $oGrafo->adicionaAresta('AM1', 'PA1', 2);
 $oGrafo->adicionaAresta('AM1', 'RR1', 2);
 $oGrafo->adicionaAresta('AM1', 'AC1', 6);
 $oGrafo->adicionaAresta('AM1', 'RO1', 6);
 
-$oGrafo->adicionaAresta('AP1', 'RR1', 5);
+$oGrafo->adicionaAresta('AP1', 'RR1', 3);
 $oGrafo->adicionaAresta('AP1', 'PA1', 1);
-$oGrafo->adicionaAresta('AP1', 'MA1', 3);
+$oGrafo->adicionaAresta('AP1', 'MA1', 5);
 
-$oGrafo->adicionaAresta('RR1', 'AM1', 16);
-$oGrafo->adicionaAresta('RR1', 'PA1', 2);
+$oGrafo->adicionaAresta('RR1', 'AM1', 2);
+$oGrafo->adicionaAresta('RR1', 'PA1', 16);
 $oGrafo->adicionaAresta('RR1', 'AP1', 3);
 
-$oGrafo->adicionaAresta('AC1', 'SC1', 1);
+$oGrafo->adicionaAresta('AC1', 'SC1', 10);
 $oGrafo->adicionaAresta('AC1', 'AM1', 6);
 $oGrafo->adicionaAresta('AC1', 'RO1', 3);
 
-$oGrafo->adicionaAresta('RO1', 'AM1', 17);
-$oGrafo->adicionaAresta('RO1', 'AC1', 11);
-$oGrafo->adicionaAresta('RO1', 'MS1', 22);
-$oGrafo->adicionaAresta('RO1', 'MT1', 6);
-$oGrafo->adicionaAresta('RO1', 'PA1', 3);
+$oGrafo->adicionaAresta('RO1', 'AM1', 6);
+$oGrafo->adicionaAresta('RO1', 'AC1', 3);
+$oGrafo->adicionaAresta('RO1', 'MS1', 17);
+$oGrafo->adicionaAresta('RO1', 'MT1', 11);
+$oGrafo->adicionaAresta('RO1', 'PA1', 22);
 
 $sInicio = 'SC1';
 $sFim = 'RS1';
