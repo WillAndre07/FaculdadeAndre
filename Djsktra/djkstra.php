@@ -35,7 +35,7 @@ function algoritmoDjikstra($aListaAdjacencia, $aVertices, $sInicio, $sFim) {
     $aDistancia[$sInicio] = 0;
 
     while (!empty($aFilaPrioritaria)) {
-        // Encontre o vértice com a menor distância na fila
+
         $nMenorDistancia = INF;
         $nIndiceMenorDistancia = -1;
 
