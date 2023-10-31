@@ -2,7 +2,6 @@
 
 error_reporting(0);
 
-
 function incluiAeroporto(&$aVertices, &$listaLigAeroportos, $sVertice) {
     if (!in_array($sVertice, $aVertices)) {
         $aVertices[] = $sVertice;
@@ -12,7 +11,7 @@ function incluiAeroporto(&$aVertices, &$listaLigAeroportos, $sVertice) {
 
 function incluiLigacao(&$listaLigAeroportos, $sVertice1, $sVertice2, $sCusto) {
     $listaLigAeroportos[$sVertice1][] = ['ligacao' => $sVertice2, 'custo' => $sCusto];
-    $listaLigAeroportos[$sVertice2][] = ['ligacao' => $sVertice1, 'custo' => $sCusto];
+    // $listaLigAeroportos[$sVertice2][] = ['ligacao' => $sVertice1, 'custo' => $sCusto];
 }
 
 function inicializaDistancia($aVertices) {
@@ -25,42 +24,42 @@ function inicializaDistancia($aVertices) {
     return $aDistancia;
 }
 
+
 function algoritmoDjikstra($listaLigAeroportos, $aVertices, $sInicio, $sFim) {
     // Seta tudo como infinito no intuito de iniciar o c
     $aDistancia = inicializaDistancia($aVertices);
     $aAnterior = [];
 
     // A fila prioritaria é um array que armazena o vértice que deve-se ser explorado
-    $aFilaPrioritaria = [];
-    $aFilaPrioritaria[] = ['vertice' => $sInicio, 'prioridade' => 0];
+    $aVerticeNaoVisitado = [];
+    $aVerticeNaoVisitado[] = ['vertice' => $sInicio, 'prioridade' => 0];
 
     $aDistancia[$sInicio] = 0;
 
-    while (!empty($aFilaPrioritaria)) {
+    while (!empty($aVerticeNaoVisitado)) {  
         $nMenorDistancia = INF;
         $nIndiceMenorDistancia = -1;
 
-        foreach ($aFilaPrioritaria as $i => $item) {
+        foreach ($aVerticeNaoVisitado as $i => $item) {
 
             if ($item['prioridade'] < $nMenorDistancia) {
                 $nMenorDistancia = $item['prioridade'];
                 $nIndiceMenorDistancia = $i;
             }
-            
         }
-        
-        $verticePresente = $aFilaPrioritaria[$nIndiceMenorDistancia]['vertice'];
+
+        $verticePresente = $aVerticeNaoVisitado[$nIndiceMenorDistancia]['vertice'];
         // Quando ele executa essa função UNSET ele retira o valor do array, indicando que esse cara já está visitado
-        unset($aFilaPrioritaria[$nIndiceMenorDistancia]);
+        unset($aVerticeNaoVisitado[$nIndiceMenorDistancia]);
         
-        $aFilaPrioritaria = array_values($aFilaPrioritaria);
+        $aVerticeNaoVisitado = array_values($aVerticeNaoVisitado);
 
         foreach ($listaLigAeroportos[$verticePresente] as $aVerticeVizinho) {
             $nPotencial = $aDistancia[$verticePresente] + $aVerticeVizinho['custo'];
             if ($nPotencial < $aDistancia[$aVerticeVizinho['ligacao']]) {
                 $aDistancia[$aVerticeVizinho['ligacao']] = $nPotencial;
                 $aAnterior[$aVerticeVizinho['ligacao']] = $verticePresente;
-                $aFilaPrioritaria[] = ['vertice' => $aVerticeVizinho['ligacao'], 'prioridade' => $nPotencial];
+                $aVerticeNaoVisitado[] = ['vertice' => $aVerticeVizinho['ligacao'], 'prioridade' => $nPotencial];
             }
         }
     }
@@ -77,6 +76,26 @@ function algoritmoDjikstra($listaLigAeroportos, $aVertices, $sInicio, $sFim) {
 
     return ['path' => $aCaminho, 'distancia' => $aDistancia[$sFim]];
 }
+
+function fAcharTodosCaminhosPossiveis($RotasSimplificadas, $sInicio, $sFim, $aCaminho = [], $iTamanho = 10) {
+    $aCaminho[] = $sInicio;
+    if ($sInicio == $sFim) {
+        return [$aCaminho];
+    }
+    if (count($aCaminho) >= $iTamanho) {
+        return [];
+    }
+    $aCaminhos = [];
+    foreach ($RotasSimplificadas[$sInicio] as $aRotasPossiveis) {
+        if (!in_array($aRotasPossiveis, $aCaminho)) {
+            $aNovasRotas = fAcharTodosCaminhosPossiveis($RotasSimplificadas, $aRotasPossiveis, $sFim, $aCaminho, $iTamanho);
+            foreach ($aNovasRotas as $aRotas) {
+                $aCaminhos[] = $aRotas;
+            }
+        }
+    }
+    return $aCaminhos;
+  }
 
 $aVertices = [];
 $listaLigAeroportos = [];
@@ -338,14 +357,68 @@ incluiLigacao($listaLigAeroportos,'RO1', 'MS1', 17);
 incluiLigacao($listaLigAeroportos,'RO1', 'MT1', 11);
 incluiLigacao($listaLigAeroportos,'RO1', 'PA1', 22);
 
-$sInicio = 'SC1';
-$sFim = 'AM1';
+$sInicio = 'RS2';
+$sFim = 'AC1';
+
+$RotasSimplificadas = [
+    'RS1' => ['RS2', 'SC1', 'SC2'],
+    'RS2' => ['RS1', 'SC1', 'SC2'],
+    'AC1' => ['SC1', 'AM1', 'RO1'],
+    'AL1' => ['PE1', 'SE1'],
+    'AM1' => ['PA1', 'RR1', 'AC1', 'RO1'],
+    'AP1' => ['RR1', 'PA1', 'MA1'],
+    'BA1' => ['MG2', 'BA2', 'PI1', 'PE2', 'SE1'],
+    'BA2' => ['TO1', 'DF1', 'BA1'],
+    'CE1' => ['RN1', 'CE2', 'MA1', 'PI1'],
+    'CE2' => ['RN1', 'CE1', 'PE2'],
+    'SC1' => ['RS1', 'RS2', 'PR1', 'AC1'],
+    'SC2' => ['RS1', 'RS2', 'PR2', 'SP3'],
+    'PR1' => ['PR2', 'SC1', 'SP2'],
+    'PR2' => ['PR1', 'SC2', 'SP3'],
+    'SP1' => ['SP2', 'SP4', 'MG3', 'MS1', 'GO1'],
+    'SP2' => ['SP1', 'PR1', 'MS1', 'SP3'],
+    'SP3' => ['SP4', 'SP5', 'PR2', 'SC2', 'SP2'],
+    'SP4' => ['SP3', 'SP5', 'MG1', 'MG3', 'SP1'],
+    'SP5' => ['SP3', 'SP4', 'MG1', 'RJ3'],
+    'MG1' => ['RJ1', 'RJ2', 'SP5', 'SP4', 'MG3', 'DF1'],
+    'MG2' => ['DF1', 'ES1', 'BA1'],
+    'MG3' => ['DF1', 'SP1', 'SP4', 'MG1'],
+    'RJ1' => ['RJ2', 'MG1', 'ES1'],
+    'RJ2' => ['RJ1', 'MG1', 'RJ3'],
+    'RJ3' => ['RJ2', 'SP5'],
+    'ES1' => ['RJ1', 'DF1', 'MG2', 'SE1'],
+    'MS1' => ['RO1', 'MT1', 'SP2', 'SP1', 'GO1'],
+    'GO1' => ['MS1', 'GO2', 'DF1'],
+    'GO2' => ['GO1', 'MT1', 'DF1'],
+    'DF1' => ['GO2', 'GO1', 'MG3', 'MG1', 'ES1', 'MG2', 'BA2', 'TO1'],
+    'MT1' => ['RO1', 'MS1', 'GO2', 'TO1', 'PA1'],
+    'TO1' => ['PA1', 'MA1', 'PI1', 'BA2', 'DF1', 'MT1'],
+    'SE1' => ['AL1', 'ES1', 'BA1', 'PE2'],
+    'PI1' => ['BA1', 'TO1', 'PA1', 'MA1', 'CE1', 'PE2'],
+    'MA1' => ['CE1', 'AP1', 'PA1', 'TO1', 'PI1'],
+    'PE1' => ['PB1', 'AL1', 'PE2'],
+    'PE2' => ['PE1', 'PB1', 'SE1', 'BA1', 'PI1', 'CE2'],
+    'PB1' => ['RN1', 'PE1', 'PE2'],
+    'RN1' => ['CE1', 'CE2', 'PB1'],
+    'PA1' => ['AP1', 'RR1', 'AM1', 'RO1', 'MT1', 'TO1', 'PI1', 'MA1'],
+    'RR1' => ['AM1', 'PA1', 'AP1'],
+    'RO1' => ['AM1', 'AC1', 'MS1', 'MT1', 'PA1'],
+  ];
 
 $resultado = algoritmoDjikstra($listaLigAeroportos, $aVertices, $sInicio, $sFim);
+$aRotasAeroportos = fAcharTodosCaminhosPossiveis($RotasSimplificadas, $sInicio, $sFim);
 
 if (empty($resultado['path'])) {
     echo "Não foi possível encontrar um caminho de $sInicio para $sFim.";
 } else {
     echo "Caminho mais curto de $sInicio para $sFim: " . implode(" -> ", $resultado['path']) . "\n";
     echo "Distância total: " . $resultado['distancia'] . " unidades.\n";
+
+    echo '<ul>';
+    foreach ($aRotasAeroportos as $aRotas) {
+        echo '<li>' .  implode('->',$aRotas) . '</li>';
+    }
+    echo '</ul>';
+    
+    echo '</div>';
 }
