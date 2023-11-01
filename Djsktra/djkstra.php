@@ -357,9 +357,6 @@ incluiLigacao($listaLigAeroportos,'RO1', 'MS1', 17);
 incluiLigacao($listaLigAeroportos,'RO1', 'MT1', 11);
 incluiLigacao($listaLigAeroportos,'RO1', 'PA1', 22);
 
-$sInicio = 'RS2';
-$sFim = 'AC1';
-
 $RotasSimplificadas = [
     'RS1' => ['RS2', 'SC1', 'SC2'],
     'RS2' => ['RS1', 'SC1', 'SC2'],
@@ -405,18 +402,28 @@ $RotasSimplificadas = [
     'RO1' => ['AM1', 'AC1', 'MS1', 'MT1', 'PA1'],
   ];
 
+$sInicio = $_POST['aero-ori'];
+$sFim = $_POST['aero-final'];
+
 $resultado = algoritmoDjikstra($listaLigAeroportos, $aVertices, $sInicio, $sFim);
 $aRotasAeroportos = fAcharTodosCaminhosPossiveis($RotasSimplificadas, $sInicio, $sFim);
 
 if (empty($resultado['path'])) {
     echo "Não foi possível encontrar um caminho de $sInicio para $sFim.";
 } else {
-    echo "Caminho mais curto de $sInicio para $sFim: " . implode(" -> ", $resultado['path']) . "\n";
-    echo "Distância total: " . $resultado['distancia'] . " unidades.\n";
+    echo "<form action='front.html' style='margin-top: 20px'>";
+    echo "<button action='front.html' style='background-color: #007BFF; color: #fff; border: none; cursor: pointer; padding: 10px 20px;'>Voltar</button>";
+    echo "</form>";
+    echo "<br>";
+    echo "<br>";
+    echo "<div style='margin-top: 20px; font-size: 18px;'>";    
+    echo "<p style='margin: 5px 0;'>Caminho mais curto de $sInicio para $sFim: " . implode(" -> ", $resultado['path']) . "</p>";
+    echo "<p style='margin: 5px 0;'>Distância total: " . $resultado['distancia'] . " U.D.</p>";
+    echo "</div>";
 
-    echo '<ul>';
+    echo '<ul style="list-style: none; padding: 0;">';
     foreach ($aRotasAeroportos as $aRotas) {
-        echo '<li>' .  implode('->',$aRotas) . '</li>';
+        echo '<li style="margin: 5px 0; background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc;">' .  implode('->',$aRotas) . '</li>';
     }
     echo '</ul>';
     
