@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Tarefas</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-white" style="background-color: lightblue;">
+        <div class="div-nav-img">
+            <img class="img-nav" src="https://www.soeltech.com.br/images/binoculos.webp" alt="">
+        </div>
+        <a class="navbar-brand" href="index.html">André/Du Sistemas</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <div class="div-cadastro">
+        <h3 class="h3-cadastro">Cadastrar Tarefa</h3>
+        <button type="button" class="btn btn-primary" id="btnAbrirFormulario">Cadastro</button>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar" id="fecharModal">&times;</span>
+            
+            <!-- Seu formulário de cadastro aqui -->
+            <form action="processar_cadastro.php" method="post">
+                <!-- Seus campos de formulário aqui -->
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <!-- Outros campos do formulário -->
+
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <hr>
+
+</body>
+
+</html>
